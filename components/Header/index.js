@@ -12,7 +12,7 @@ const Header = () => (
           Tá Precisando de quem?
         </a>
       </Link>
-      <p className="text-lg text-gray-600">
+      <div className="text-lg text-gray-600">
         Ache seu{" "}
         <span className="font-bold bg-blue-800 text-white px-4">
           <TextLoop
@@ -21,7 +21,7 @@ const Header = () => (
           />
         </span>{" "}
         aqui
-      </p>
+      </div>
     </div>
   </header>
 )

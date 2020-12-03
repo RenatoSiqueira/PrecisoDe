@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import PageTitle from "../components/PageTitle"
 import Link from "next/link"
-import axios from "axios"
 
 const Success = () => (
   <p className="text-sm text-gray-800">
@@ -18,7 +17,7 @@ const Cadastro = () => {
   const [form, setForm] = useState({
     Nome: "",
     Telefone: "",
-    Whatsapp: false,
+    Whatsapp: true,
     Atuacao: "",
     Categoria: "",
     Instagram: "",
@@ -36,15 +35,6 @@ const Cadastro = () => {
 
   const save = async () => {
     try {
-      let imgUrlFull = null
-      try {
-        imgUrlFull = await axios.get(form.instaFoto + "?__a=1")
-        if (imgUrlFull.data) {
-          imgUrlFull = imgUrlFull.data.graphql.shortcode_media.display_url
-        }
-      } catch (error) {}
-
-      form["Foto"] = imgUrlFull
       const response = await fetch("/api/post-new", {
         method: "POST",
         body: JSON.stringify(form),
@@ -65,58 +55,64 @@ const Cadastro = () => {
           </h1>
           {success && <Success />}
         </div>
-        <div className="lg:w-1/2 md:w-2/3 mx-auto">
-          <div className="flex flex-wrap -m-2">
-            <div className="p-2 w-full">
-              <input
-                className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
-                placeholder="Nome Completo"
-                type="text"
-                name="Nome"
-                onChange={onChange}
-                value={form.Nome}
-              />
-            </div>
-            <div className="p-2 w-1/2">
-              <input
-                className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
-                placeholder="Telefone"
-                type="text"
-                name="Telefone"
-                onChange={onChange}
-                value={form.Telefone}
-              />
-            </div>
-            <div className="p-2 w-1/2">
-              <input
-                className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
-                placeholder="Link do Instagram"
-                type="text"
-                name="Instagram"
-                onChange={onChange}
-                value={form.Instagram}
-              />
-            </div>
-            <div className="p-2 w-full">
-              <textarea
-                className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
-                placeholder="Atuacção"
-                type="text"
-                name="Atuacao"
-                onChange={onChange}
-                value={form.Atuacao}
-              />
-            </div>
-            <div className="p-2 w-full">
-              <button
-                className="flex mx-auto text-white bg-blue-800 font-bold text-sm uppercase hover:bg-blue-700 border-0 py-2 px-8 focus:outline-none rounded"
-                onClick={save}
-              >
-                Cadastrar
-              </button>
+        {!success && (
+          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+            <div className="flex flex-wrap -m-2">
+              <div className="p-2 w-full">
+                <input
+                  className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
+                  placeholder="Nome Completo"
+                  type="text"
+                  name="Nome"
+                  onChange={onChange}
+                  value={form.Nome}
+                  required
+                />
+              </div>
+              <div className="p-2 w-1/2">
+                <input
+                  className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
+                  placeholder="Telefone com Whatsapp"
+                  type="text"
+                  name="Telefone"
+                  onChange={onChange}
+                  value={form.Telefone}
+                  required
+                />
+              </div>
+              <div className="p-2 w-1/2">
+                <input
+                  className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
+                  placeholder="Categoria"
+                  type="text"
+                  name="Categoria"
+                  onChange={onChange}
+                  value={form.Categoria}
+                  required
+                />
+              </div>
+              <div className="p-2 w-full">
+                <input
+                  className="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-purple-500 text-base px-4 py-2"
+                  placeholder="Área de Atuação"
+                  type="text"
+                  name="Atuacao"
+                  onChange={onChange}
+                  value={form.Atuacao}
+                  required
+                />
+              </div>
+              <div className="p-2 w-full">
+                <button
+                  className="flex mx-auto text-white bg-blue-800 font-bold text-sm uppercase hover:bg-blue-700 border-0 py-2 px-8 focus:outline-none rounded"
+                  onClick={save}
+                >
+                  Cadastrar
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

@@ -23,7 +23,7 @@ const Index = () => {
         }
       })
 
-      setDados({ category, allData, filter: "pintor" })
+      setDados({ category, allData, filter: "" })
       setLoading(false)
     } catch (error) {
       console.log(error)
@@ -47,21 +47,14 @@ const Index = () => {
       <div className="container mx-auto flex flex-wrap py-6">
         {!isLoading && (
           <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-            {dados.allData
-              .filter(
-                (item) =>
-                  item.category.toLowerCase() === dados.filter.toLowerCase()
-              )
-              .map((item, index) => (
-                <Professional key={index} data={item} />
-              ))}
-            {/* 
-            Outra Forma:
             {dados.allData.map((item, index) => {
-              if (item.category.toLowerCase() === dados.filter.toLowerCase()) {
+              if (
+                !dados.filter ||
+                item.category.toLowerCase() === dados.filter.toLowerCase()
+              ) {
                 return <Professional key={index} data={item} />
               }
-            })} */}
+            })}
           </section>
         )}
         <aside

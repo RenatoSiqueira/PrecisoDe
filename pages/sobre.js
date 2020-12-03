@@ -17,7 +17,7 @@ const Sobre = () => (
           <strong>PalpiteBox</strong>
         </a>
         ; um projeto que utiliza <strong>NextJs, TailwindCSS, MomentJS </strong>{" "}
-        e integração realtime com o <strong>Google Spreadsheet</strong>.
+        e integração com o <strong>Google Spreadsheet</strong>.
       </p>
       <p className="pb-3 font-bold">
         Construido passo a passo no FullStackMaster Premium.

@@ -7,9 +7,11 @@ const Navbar = () => (
       <nav>
         <ul className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
           <li>
-            <a className="hover:text-gray-200 hover:underline px-4">
-              Preciso de...
-            </a>
+            <Link href="/">
+              <a className="hover:text-gray-200 hover:underline px-4">
+                Preciso de...
+              </a>
+            </Link>
           </li>
           <li>
             <Link href="/sobre">

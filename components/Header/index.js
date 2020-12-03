@@ -9,7 +9,7 @@ const Header = () => (
     <div className="flex flex-col items-center py-12">
       <Link href="/">
         <a className="font-bold text-gray-800 uppercase text-center hover:text-gray-700 text-5xl">
-          Precisando de quem?
+          Tá Precisando de quem?
         </a>
       </Link>
       <p className="text-lg text-gray-600">

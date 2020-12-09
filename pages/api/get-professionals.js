@@ -24,6 +24,7 @@ export default async (req, res) => {
 
     res.json(professionals)
   } catch (error) {
+    console.log(error)
     res.json({})
   }
 }

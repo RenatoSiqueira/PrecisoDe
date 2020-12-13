@@ -44,29 +44,28 @@ const Index = () => {
       {isLoading && (
         <p className="container text-center text-4xl font-bold">Aguarde...</p>
       )}
-      {/* {!isLoading && (
+      {!isLoading && (
         <NavSections cat={dados.category} action={filterResults} />
-      )} */}
+      )}
       <div className="container mx-auto flex flex-wrap py-6">
-        {/* {!isLoading && ( */}
-        <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-          {/* {dados?.allData.map((item, index) => {
+        {!isLoading && (
+          <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+            {dados?.allData.map((item, index) => {
               if (
                 !dados.filter ||
                 item.category.toLowerCase() === dados.filter.toLowerCase()
               ) {
                 return <Professional key={index} data={item} />
               }
-            })} */}
-          <Professional key={"index"} data={""} />
-        </section>
-        {/* )} */}
+            })}
+          </section>
+        )}
         <aside
           className={`w-full ${
             isLoading ? "w-full" : "md:w-1/3"
           } flex flex-col items-center px-3`}
         >
-          <AboutUs />
+          <HowToAdded />
           {/* <Instagram /> */}
         </aside>
       </div>

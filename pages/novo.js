@@ -70,7 +70,7 @@ const Cadastro = () => {
                     onBlur={handleBlur}
                   />
                 </div>
-                <div className="p-2 w-1/2">
+                <div className="p-2 w-full md:w-1/2">
                   <input
                     className={`${
                       errors.Telefone && touched.Telefone
@@ -85,14 +85,14 @@ const Cadastro = () => {
                     onBlur={handleBlur}
                   />
                 </div>
-                <div className="p-2 w-1/2">
+                <div className="p-2 w-full md:w-1/2">
                   <input
                     className={`${
                       errors.Categoria && touched.Categoria
                         ? "border-red-400"
                         : "border-gray-400"
                     } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
-                    placeholder="Categoria"
+                    placeholder="Categoria (Frete, Encanador, Pintor...)"
                     type="text"
                     name="Categoria"
                     value={values.Categoria}

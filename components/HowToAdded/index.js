@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 
-const AboutUs = () => (
+const HowToAdded = () => (
   <div className="w-full bg-white shadow flex flex-col my-4 p-6">
     <p className="text-xl font-semibold pb-5">Como ser Adicionado?</p>
     <p className="pb-2">
@@ -21,4 +21,4 @@ const AboutUs = () => (
   </div>
 )
 
-export default AboutUs
+export default HowToAdded

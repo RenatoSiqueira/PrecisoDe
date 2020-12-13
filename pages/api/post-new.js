@@ -13,6 +13,7 @@ export default async (req, res) => {
   const data = JSON.parse(req.body)
 
   await sheet.addRow({
+    Ativo: false,
     Nome: data.Nome,
     Telefone: data.Telefone,
     Whatsapp: true,

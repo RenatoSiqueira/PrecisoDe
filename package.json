@@ -21,6 +21,7 @@
   "homepage": "https://github.com/RenatoSiqueira/PrecisoDe#readme",
   "dependencies": {
     "autoprefixer": "^10.0.1",
+    "formik": "^2.2.6",
     "google-spreadsheet": "^3.0.13",
     "hamburger-react": "^2.3.0",
     "moment": "^2.29.1",
@@ -30,6 +31,7 @@
     "react-dom": "^17.0.1",
     "react-text-loop": "^2.3.0",
     "swr": "^0.3.8",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^1.9.6",
+    "yup": "^0.32.8"
   }
 }

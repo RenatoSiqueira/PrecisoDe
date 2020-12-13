@@ -14,10 +14,6 @@ const Professional = ({ data: { category, nome, tel, atuacao, isWhats } }) => (
         Telefone:{" "}
         <span className="font-semibold hover:text-gray-800">{tel}</span>
       </p>
-      <p className="text-sm pb-3">
-        Atuação:{" "}
-        <span className="font-semibold hover:text-gray-800">{atuacao}</span>
-      </p>
 
       {isWhats && (
         <a

@@ -13,11 +13,11 @@ const Navbar = () => (
               </a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/sobre">
               <a className="hover:text-gray-200 hover:underline px-4">Sobre</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

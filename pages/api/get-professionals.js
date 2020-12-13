@@ -13,14 +13,16 @@ export default async (req, res) => {
     const sheet = doc.sheetsByIndex[4]
 
     const rows = await sheet.getRows()
-    const professionals = rows.map((i) => ({
-      nome: i.Nome,
-      tel: i.Telefone,
-      isWhats: i.Whatsapp === "TRUE" ? true : false,
-      atuacao: i.Atuacao,
-      category: i.Categoria,
-      instagram: i.Instagram,
-    }))
+    const professionals = rows
+      .filter((i) => i.Ativo.toLowerCase() === "true")
+      .map((i) => ({
+        nome: i.Nome,
+        tel: i.Telefone,
+        isWhats: i.Whatsapp === "TRUE" ? true : false,
+        atuacao: i.Atuacao,
+        category: i.Categoria,
+        instagram: i.Instagram,
+      }))
 
     res.json(professionals)
   } catch (error) {

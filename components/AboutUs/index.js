@@ -10,9 +10,12 @@ const AboutUs = () => (
       <span className="font-bold">Cadastre-se gratuitamente</span> aqui e seja
       encontrado mais facilmente!
     </p>
+    <p className="text-xs">
+      Todos os cadastros passam por aprovação prévia antes de serem mostrados.
+    </p>
     <Link href="/novo">
       <a className="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-        Quero Cadastrar!
+        Quero Indicar/Cadastrar!
       </a>
     </Link>
   </div>

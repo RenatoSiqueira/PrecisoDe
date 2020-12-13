@@ -63,7 +63,7 @@ const Index = () => {
           } flex flex-col items-center px-3`}
         >
           <AboutUs />
-          <Instagram />
+          {/* <Instagram /> */}
         </aside>
       </div>
     </>

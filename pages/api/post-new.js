@@ -1,7 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../lib/base64"
-import * as moment from 'moment';
-import 'moment/locale/pt-br';
+import { DateTime } from "luxon"
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
@@ -22,7 +21,7 @@ export default async (req, res) => {
     Categoria: data.Categoria,
     Atuacao: data.Atuacao,
     Instagram: data.Instagram,
-    "Data Preenchimento": moment().locale('pt-br').format("DD/MM/YYYY, HH:mm:ss"),
+    "Data Preenchimento": DateTime.now().setLocale('pt-br').setZone("America/Sao_Paulo").toFormat('ff'),
   })
 
   res.json({ status: true })

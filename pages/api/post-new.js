@@ -1,5 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../lib/base64"
+import moment from "moment";
+// moment.locale('pt-br')
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
@@ -20,6 +22,7 @@ export default async (req, res) => {
     Categoria: data.Categoria,
     Atuacao: data.Atuacao,
     Instagram: data.Instagram,
+    "Data Preenchimento": moment().format("DD/MM/YYYY, HH:mm:ss"),
   })
 
   res.json({ status: true })

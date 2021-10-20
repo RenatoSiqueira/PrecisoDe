@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../lib/base64"
 import moment from "moment";
-// moment.locale('pt-br')
+moment.locale('pt-br')
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 

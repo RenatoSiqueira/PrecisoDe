@@ -47,6 +47,7 @@ const Index = () => {
       {!isLoading && (
         <NavSections cat={dados.category} action={filterResults} />
       )}
+      {JSON.stringify(dados)}
       <div className="container mx-auto flex flex-wrap py-6">
         {!isLoading && (
           <section className="w-full md:w-2/3 flex flex-col items-center px-3">
@@ -61,9 +62,8 @@ const Index = () => {
           </section>
         )}
         <aside
-          className={`w-full ${
-            isLoading ? "w-full" : "md:w-1/3"
-          } flex flex-col items-center px-3`}
+          className={`w-full ${isLoading ? "w-full" : "md:w-1/3"
+            } flex flex-col items-center px-3`}
         >
           <HowToAdded />
           {/* <Instagram /> */}
